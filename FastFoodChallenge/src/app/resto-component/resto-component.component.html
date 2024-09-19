@@ -1,0 +1,16 @@
+<div>
+    <h3>Pedidos Ingresados</h3>
+    @for (pedido of ListaPedidosIngresados; track $index){
+        <label for="">{{ '(' + pedido.numero + ') - ' + pedido.description }}</label>
+
+    }        
+
+    <h3>Pedidos listos para entregar</h3>
+    <ul>
+        @for (pedido of mostrarParaEntregar(); track $index) {
+            <li>{{'('+pedido.numero+')-'+ pedido.description}}
+                <button style="background-color: green; color: white;" (click)="cargarHistorico(pedido)">ENTREGAR!</button>
+            </li>
+        }  
+    </ul> 
+</div>

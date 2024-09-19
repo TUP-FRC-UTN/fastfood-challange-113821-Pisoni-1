@@ -1,0 +1,8 @@
+<div>
+    <h3>REALIZA TU PEDIDO!</h3>
+    <form action="" #FormularioPedido="ngForm" (ngSubmit)="cargarPedido(FormularioPedido)">
+        <label for="">Nombre</label> <input name= "nombreusuario" ngModel type="text" [(ngModel)]="pedido.name">
+        <label for="">Pedido</label> <input name="descripcionpedido" ngModel type="text" [(ngModel)]="pedido.description">
+        <button type="submit" style="background: green; color: white">CONFIRMAR</button>
+    </form>
+</div>

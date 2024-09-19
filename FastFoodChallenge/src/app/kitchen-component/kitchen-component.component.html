@@ -1,0 +1,25 @@
+<div>
+    <h3>Pendientes de Cocinar</h3>
+    <ul>
+        @for (pedido of ListaPedidos; track $index) {
+            <li> {{'('+pedido.numero+')-'+ pedido.description}}
+                @if(estaCoccion != null){
+                    <button style="background-color: red; color:white" (click)="cargarEnCoccion(pedido)" [disabled]>COCINAR</button>
+                }@else {
+                    <button style="background-color: red; color:white" (click)="cargarEnCoccion(pedido)">COCINAR</button>
+                }
+                
+            </li>
+        }
+   </ul>
+
+    <h3>Pedidos en coccion</h3>
+
+        <ul>
+            @if(estaCoccion != null){
+                <li> ({{estaCoccion.numero}}) - {{estaCoccion.description}}</li>
+                <button class="btn btn-primary" style="background-color: red; color:white" (click)="cargarPedidoListo()"> Pedido terminado!</button>
+            }
+        </ul>
+ 
+</div>
